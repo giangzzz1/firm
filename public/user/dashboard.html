@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Menu</title>
+    <!-- Nhúng Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="container">
+    <div class="d-flex">
+        <!-- Phần Menu -->
+        <div class="menu-container bg-light p-3">
+            <h3>Dashboard</h3>
+            <ul class="menu list-unstyled">
+                <li class="dropdown">
+                    <button class="dropdown-btn btn btn-light w-100 text-start">
+                        <i class="icon-user"></i> Tài Khoản Của Tôi
+                    </button>
+                    <ul class="dropdown-content list-unstyled ps-3">
+                        <li><a href="#">Hồ Sơ</a></li>
+                        <li><a href="#">Ngân Hàng</a></li>
+                        <li><a href="#">Địa Chỉ</a></li>
+                        <li><a href="#">Đổi Mật Khẩu</a></li>
+                        <li><a href="#">Cài Đặt Thông Báo</a></li>
+                        <li><a href="#">Những Thiết Lập Riêng Tư</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="btn btn-light w-100 text-start">Đơn Mua</a></li>
+                <li><a href="#" class="btn btn-light w-100 text-start">Thông Báo</a></li>
+                <li><a href="#" class="btn btn-light w-100 text-start">Kho Voucher</a></li>
+                <li><a href="#" class="btn btn-light w-100 text-start">Shopee Xu</a></li>
+            </ul>
+        </div>
+
+        <!-- Phần Content -->
+        <div class="content-container p-4 flex-grow-1">
+            <h2>Nội Dung</h2>
+            <p>Đây là phần nội dung hiển thị khi người dùng chọn các mục từ menu bên trái. Bạn có thể thay đổi nội dung này theo nhu cầu.</p>
+        </div>
+    </div>
+
+    <!-- Nhúng Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

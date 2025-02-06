@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tải lên hình ảnh</title>
+    <style>
+        .image-preview {
+            display: inline-block;
+            position: relative;
+            margin: 5px;
+        }
+        .image-preview img {
+            max-width: 100px;
+            max-height: 100px;
+            border: 1px solid #ccc;
+        }
+        .remove-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<input type="file" id="image-input" multiple accept="image/*">
+<div id="image-preview-container"></div>
+
+<script>
+    const imageInput = document.getElementById('image-input');
+    const imagePreviewContainer = document.getElementById('image-preview-container');
+    let imageFiles = []; // Mảng để lưu trữ thông tin hình ảnh
+
+    imageInput.addEventListener('change', function() {
+        const files = Array.from(imageInput.files);
+
+        // Cập nhật mảng hình ảnh với các file mới
+        imageFiles = [...imageFiles, ...files];
+        renderImages();
+    });
+
+    function renderImages() {
+        imagePreviewContainer.innerHTML = ''; // Xóa hình ảnh đã hiện lên trước đó
+
+        imageFiles.forEach((file, index) => {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const imagePreview = document.createElement('div');
+                imagePreview.classList.add('image-preview');
+
+                const img = document.createElement('img');
+                img.src = e.target.result;
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'X';
+                removeButton.classList.add('remove-image');
+
+                removeButton.onclick = function() {
+                    // Xóa hình ảnh khỏi mảng và cập nhật lại
+                    imageFiles.splice(index, 1);
+                    renderImages();
+                };
+
+                imagePreview.appendChild(img);
+                imagePreview.appendChild(removeButton);
+                imagePreviewContainer.appendChild(imagePreview);
+            };
+
+            reader.readAsDataURL(file);
+        });
+    }
+</script>
+
+</body>
+</html>
