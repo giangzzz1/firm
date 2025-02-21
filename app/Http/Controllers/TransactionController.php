@@ -31,7 +31,7 @@ class TransactionController extends Controller
     public function getTransactionDetailsDevnet($transactionHash)
     {
         try {
-            $rpcEndpoint = "https://api.testnet.solana.com";
+            $rpcEndpoint = "https://api.devnet.solana.com";
             $payload = [
                 "jsonrpc" => "2.0",
                 "id" => 1,

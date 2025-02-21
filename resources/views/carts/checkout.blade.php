@@ -175,7 +175,7 @@
                     }
 
                     // Connect to Solana network and check balance
-                    const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('testnet'), 'confirmed');
+                    const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('devnet'), 'confirmed');
                     
                     let balance;
                     try {

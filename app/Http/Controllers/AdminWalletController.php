@@ -46,7 +46,7 @@ class AdminWalletController extends Controller
     public function getTransactionDetailsDevnet($transactionHash)
     {
         try {
-            $rpcEndpoint = "https://api.testnet.solana.com"; // RPC endpoint cho devnet
+            $rpcEndpoint = "https://api.devnet.solana.com"; // RPC endpoint cho devnet
 
             $payload = [
                 "jsonrpc" => "2.0",
